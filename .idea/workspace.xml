@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6904f024-c0fa-470b-9d31-bc0d5dbf6b35" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/jogo/negocio/Equipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jogo/negocio/HabilidadeEspecial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jogo/negocio/Inventario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jogo/negocio/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jogo/negocio/personagens/Arqueiro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jogo/negocio/personagens/Guerreiro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jogo/negocio/personagens/Mago.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jogo/negocio/personagens/Personagem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jogo/persistencia/EquipeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jogo/persistencia/Persistencia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jogo/persistencia/PersonagemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jogo.iu/main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jogo.negocio/teste.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jogo.persistencia/teste2.java" beforeDir="false" />
-    </list>
+    <list default="true" id="6904f024-c0fa-470b-9d31-bc0d5dbf6b35" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,28 +13,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2jKKnbOgNP7jmhaHYWUWbDJy3zE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -69,6 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721130496632</updated>
       <workItem from="1721130498609" duration="1149000" />
+      <workItem from="1721244409891" duration="16000" />
     </task>
     <servers />
   </component>
