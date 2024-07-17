@@ -1,9 +1,7 @@
 package jogo.persistencia;
 
-import java.util.List;
-
-public interface Persistencia<T> {
+public interface Persistencia<T, G> {
     void salvar(T t) throws Exception;
-    T recuperar(String nome) throws Exception;
-    List<T> listar() throws Exception;
+    G recuperar(String nome) throws Exception;
+    T listar() throws Exception;
 }
