@@ -1,6 +1,8 @@
 package jogo.negocio.personagens;
 
 public class Guerreiro extends Personagem {
+	
+	private static final long serialVersionUID = 6068439488695556121L;
 
     public Guerreiro(String nome, int pontosVida, int pontosAtaque) {
         super(nome, pontosVida, pontosAtaque);
