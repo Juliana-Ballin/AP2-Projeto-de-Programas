@@ -1,6 +1,8 @@
 package jogo.negocio.personagens;
 
 public class Mago extends Personagem {
+	
+	private static final long serialVersionUID = 7283492658013210645L;
 
     public Mago(String nome, int pontosVida, int pontosAtaque) {
         super(nome, pontosVida, pontosAtaque);

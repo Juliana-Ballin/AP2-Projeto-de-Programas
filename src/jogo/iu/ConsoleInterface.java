@@ -1,18 +1,21 @@
 package jogo.iu;
 
 import jogo.negocio.Equipe;
-import jogo.negocio.Inventario;
+import jogo.negocio.ListaEquipe;
+//import jogo.negocio.Inventario;
 import jogo.negocio.Item;
 import jogo.negocio.personagens.*;
-import jogo.persistencia.EquipeDAO;
+//import jogo.persistencia.EquipeDAO;
 import jogo.persistencia.PersonagemDAO;
-s
 import java.util.Scanner;
 
 public class ConsoleInterface {
     private static PersonagemDAO personagemDAO = new PersonagemDAO();
-    private static EquipeDAO equipeDAO = new EquipeDAO();
+//    private static EquipeDAO equipeDAO = new EquipeDAO();
     private static Scanner scanner = new Scanner(System.in);
+    private static ListaPersonagens listaPersonagens = new ListaPersonagens();
+    private static ListaEquipe listaEquipes = new ListaEquipe();
+
 
     public static void main(String[] args) {
         while (true) {
@@ -82,7 +85,8 @@ public class ConsoleInterface {
                 return;
         }
 
-        personagemDAO.salvar(personagem);
+        System.out.println("Salvando personagem");
+		listaPersonagens.salvarPersonagem(personagem);
         System.out.println("Personagem criado com sucesso!");
     }
 
@@ -99,7 +103,7 @@ public class ConsoleInterface {
         String nomeItem = scanner.nextLine();
         Item item = new Item(nomeItem);
         personagem.getInventario().adicionarItem(item);
-        personagemDAO.salvar(personagem);
+//        personagemDAO.salvar(listapersonagens);
 
         System.out.println("Item adicionado ao inventário!");
     }
@@ -122,7 +126,7 @@ public class ConsoleInterface {
             }
         }
 
-        equipeDAO.salvar(equipe);
+        listaEquipes.salvarEquipe(equipe);
         System.out.println("Equipe formada com sucesso!");
     }
 
