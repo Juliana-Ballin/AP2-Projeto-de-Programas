@@ -19,6 +19,7 @@ public class ConsoleInterface {
 
     public static void main(String[] args) {
         while (true) {
+        	System.out.println("\nEPIC GAME");
             System.out.println("1. Criar Personagem");
             System.out.println("2. Adicionar Item ao Inventário");
             System.out.println("3. Formar Equipe");
