@@ -61,6 +61,8 @@ public class ConsoleInterface {
         int pontosVida = scanner.nextInt();
         System.out.println("Digite os pontos de ataque:");
         int pontosAtaque = scanner.nextInt();
+        System.out.println("Digite a mana:");
+        int mana = scanner.nextInt();
         scanner.nextLine(); // Consumir nova linha
 
         System.out.println("Escolha a classe do personagem:");
@@ -73,20 +75,19 @@ public class ConsoleInterface {
         Personagem personagem = null;
         switch (classe) {
             case 1:
-                personagem = new Guerreiro(nome, pontosVida, pontosAtaque);
+                personagem = new Guerreiro(nome, pontosVida, pontosAtaque, mana);
                 break;
             case 2:
-                personagem = new Mago(nome, pontosVida, pontosAtaque);
+                personagem = new Mago(nome, pontosVida, pontosAtaque, mana);
                 break;
             case 3:
-                personagem = new Arqueiro(nome, pontosVida, pontosAtaque);
+                personagem = new Arqueiro(nome, pontosVida, pontosAtaque, mana);
                 break;
             default:
                 System.out.println("Classe inválida.");
                 return;
         }
 
-        System.out.println("Salvando personagem");
 		listaPersonagens.salvarPersonagem(personagem);
         System.out.println("Personagem criado com sucesso!");
     }
@@ -149,14 +150,62 @@ public class ConsoleInterface {
         }
 
         while (personagem1.getPontosVida() > 0 && personagem2.getPontosVida() > 0) {
-            personagem1.atacar(personagem2);
+        	System.out.println(personagem1.getNome() + " está escolhendo um ataque:");
+        	System.out.println("1. Ataque normal");
+        	System.out.println("2. Habilidade especial");
+        	int tipo_ataque = scanner.nextInt();
+        	scanner.nextLine(); // Consumindo linha
+        	
+        	switch (tipo_ataque) {
+	        	case 1:
+	        		personagem1.atacar(personagem2);
+	        		if(personagem2.getPontosVida() > 0) {
+	        			System.out.println(personagem2.getNome() + " está com " + personagem2.getPontosVida() + " pontos de vida!");
+	        		}
+	        		break;
+	        	case 2:
+	        		personagem1.usarHabilidade(personagem2);
+	        		if(personagem2.getPontosVida() > 0) {
+	        			System.out.println(personagem2.getNome() + " está com " + personagem2.getPontosVida() + " pontos de vida!");
+	        		}
+	        		break;
+	        	default:
+	        		System.out.println("Ataque inválido");
+	        		return;
+        	}
+        	
             if (personagem2.getPontosVida() <= 0) {
+            	System.out.println(personagem2.getNome() + " morreu!");
                 System.out.println(personagem1.getNome() + " venceu!");
                 return;
             }
 
-            personagem2.atacar(personagem1);
+            System.out.println(personagem2.getNome() + " está escolhendo um ataque:");
+        	System.out.println("1. Ataque normal");
+        	System.out.println("2. Habilidade especial");
+        	int tipo_ataque2 = scanner.nextInt();
+        	scanner.nextLine(); // Consumindo linha
+        	
+        	switch (tipo_ataque) {
+        	case 1:
+        		personagem2.atacar(personagem1);
+        		if(personagem1.getPontosVida() > 0) {
+        			System.out.println(personagem1.getNome() + " está com " + personagem1.getPontosVida() + " pontos de vida!");
+        		}
+        		break;
+        	case 2:
+        		personagem2.usarHabilidade(personagem1);
+        		if(personagem1.getPontosVida() > 0) {
+        			System.out.println(personagem1.getNome() + " está com " + personagem1.getPontosVida() + " pontos de vida!");
+        		}
+        		break;
+        	default:
+        		System.out.println("Ataque inválido");
+        		return;
+        	}
+        	
             if (personagem1.getPontosVida() <= 0) {
+            	System.out.println(personagem1.getNome() + " morreu!");
                 System.out.println(personagem2.getNome() + " venceu!");
                 return;
             }

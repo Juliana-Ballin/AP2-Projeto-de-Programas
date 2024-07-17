@@ -1,20 +1,23 @@
 package jogo.negocio.personagens;
 
-import jogo.negocio.HabilidadeEspecial;
-import jogo.negocio.Inventario;
 import java.io.Serializable;
 
-public abstract class Personagem implements HabilidadeEspecial, Serializable {
+import jogo.negocio.HabilidadeEspecial;
+import jogo.negocio.Inventario;
+
+public abstract class Personagem implements HabilidadeEspecial<Personagem>, Serializable {
 	private static final long serialVersionUID = 5189430522791887767L;
-    protected String nome;
+	protected String nome;
     protected int pontosVida;
     protected int pontosAtaque;
+    protected int mana;
     protected Inventario inventario;
 
-    public Personagem(String nome, int pontosVida, int pontosAtaque) {
+    public Personagem(String nome, int pontosVida, int pontosAtaque, int mana) {
         this.nome = nome;
         this.pontosVida = pontosVida;
         this.pontosAtaque = pontosAtaque;
+        this.mana = mana;
         this.inventario = new Inventario();
     }
 
@@ -35,8 +38,14 @@ public abstract class Personagem implements HabilidadeEspecial, Serializable {
     public int getPontosAtaque() {
         return pontosAtaque;
     }
+    
+    public int getMana() {
+    	return mana;
+    }
 
     public Inventario getInventario() {
         return inventario;
     }
+    
+    public abstract void usarHabilidade(Personagem alvo);
 }
