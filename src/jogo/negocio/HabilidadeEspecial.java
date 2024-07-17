@@ -1,5 +1,5 @@
 package jogo.negocio;
 
-public interface HabilidadeEspecial {
-    void usarHabilidade();
+public interface HabilidadeEspecial<T> {
+    void usarHabilidade(T t);
 }
