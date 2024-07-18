@@ -92,24 +92,34 @@ public class ConsoleInterface {
         System.out.println("Personagem criado com sucesso!");
     }
 
-    private static void adicionarItemInventario() throws Exception {
+    private static void adicionarItemInventario() {
         System.out.println("Digite o nome do personagem:");
         String nome = scanner.nextLine();
-        Personagem personagem = personagemDAO.recuperar(nome);
-        if (personagem == null) {
-            System.out.println("Personagem não encontrado.");
+        Personagem personagem = null;
+
+        try {
+            personagem = personagemDAO.recuperar(nome);
+            if (personagem == null) {
+                System.out.println("Personagem não encontrado.");
+                return;
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao recuperar o personagem: " + e.getMessage());
             return;
         }
 
         System.out.println("Digite o nome do item:");
         String nomeItem = scanner.nextLine();
         Item item = new Item(nomeItem);
-        personagem.getInventario().adicionarItem(item);
-//        personagemDAO.salvar(listapersonagens);
 
-        System.out.println("Item adicionado ao inventário!");
+        try {
+            personagem.getInventario().adicionarItem(item);
+            System.out.println("Item adicionado ao inventário!");
+        } catch (Exception e) {
+            System.out.println("Erro ao adicionar item: " + e.getMessage());
+        }
     }
-
+    
     private static void formarEquipe() throws Exception {
         Equipe equipe = new Equipe();
         System.out.println("Digite o número de personagens na equipe:");
