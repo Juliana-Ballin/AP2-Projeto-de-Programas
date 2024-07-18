@@ -19,9 +19,9 @@ public class PersonagemDAO implements Persistencia<ListaPersonagens, Personagem>
     @Override
     public Personagem recuperar(String nome) throws Exception {
         ListaPersonagens personagens = listar();
-        for (int i = 0; i < personagens.getPersonagens().size(); i++) {
-            if (personagens.getPersonagens().get(i).getNome().equals(nome)) {
-                return personagens.getPersonagens().get(i);
+        for (Personagem p : personagens.getPersonagens()) {
+            if (p.getNome().equalsIgnoreCase(nome)) {
+                return p;
             }
         }
         return null;
