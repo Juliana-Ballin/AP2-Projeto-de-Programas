@@ -20,4 +20,5 @@ public class ListaPersonagens implements Serializable {
 		personagens.add(personagem);
 		personagemDAO.salvar(this);
 	}
+	
 }
