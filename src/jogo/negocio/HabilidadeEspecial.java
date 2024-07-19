@@ -1,5 +1,5 @@
 package jogo.negocio;
 
 public interface HabilidadeEspecial<T> {
-    void usarHabilidade(T t);
+    void usarHabilidade(T alvo) throws Exception;
 }
