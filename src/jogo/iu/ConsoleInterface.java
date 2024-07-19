@@ -16,7 +16,7 @@ public class ConsoleInterface {
     private static ListaPersonagens listaPersonagens = new ListaPersonagens();
     private static ListaEquipe listaEquipes = new ListaEquipe();
 
-
+    
     public static void main(String[] args) {
         while (true) {
         	System.out.println("\nEPIC GAME");
@@ -160,62 +160,72 @@ public class ConsoleInterface {
         }
 
         while (personagem1.getPontosVida() > 0 && personagem2.getPontosVida() > 0) {
-        	System.out.println(personagem1.getNome() + " está escolhendo um ataque:");
-        	System.out.println("1. Ataque normal");
-        	System.out.println("2. Habilidade especial");
-        	int tipo_ataque = scanner.nextInt();
-        	scanner.nextLine(); // Consumindo linha
-        	
-        	switch (tipo_ataque) {
-	        	case 1:
-	        		personagem1.atacar(personagem2);
-	        		if(personagem2.getPontosVida() > 0) {
-	        			System.out.println(personagem2.getNome() + " está com " + personagem2.getPontosVida() + " pontos de vida!");
-	        		}
-	        		break;
-	        	case 2:
-	        		personagem1.usarHabilidade(personagem2);
-	        		if(personagem2.getPontosVida() > 0) {
-	        			System.out.println(personagem2.getNome() + " está com " + personagem2.getPontosVida() + " pontos de vida!");
-	        		}
-	        		break;
-	        	default:
-	        		System.out.println("Ataque inválido");
-	        		return;
-        	}
-        	
+            System.out.println(personagem1.getNome() + " está escolhendo um ataque:");
+            System.out.println("1. Ataque normal");
+            System.out.println("2. Habilidade especial");
+            int tipo_ataque = scanner.nextInt();
+            scanner.nextLine(); // Consumindo linha
+
+            try {
+                switch (tipo_ataque) {
+                    case 1:
+                        personagem1.atacar(personagem2);
+                        if(personagem2.getPontosVida() > 0) {
+                            System.out.println(personagem2.getNome() + " está com " + personagem2.getPontosVida() + " pontos de vida!");
+                        }
+                        break;
+                    case 2:
+                        personagem1.usarHabilidade(personagem2);
+                        if(personagem2.getPontosVida() > 0) {
+                            System.out.println(personagem2.getNome() + " está com " + personagem2.getPontosVida() + " pontos de vida!");
+                        }
+                        break;
+                    default:
+                        System.out.println("Ataque inválido");
+                        return;
+                }
+            } catch (Exception e) {
+                System.out.println("Erro: " + e.getMessage());
+                return;
+            }
+
             if (personagem2.getPontosVida() <= 0) {
-            	System.out.println(personagem2.getNome() + " morreu!");
+                System.out.println(personagem2.getNome() + " morreu!");
                 System.out.println(personagem1.getNome() + " venceu!");
                 return;
             }
 
             System.out.println(personagem2.getNome() + " está escolhendo um ataque:");
-        	System.out.println("1. Ataque normal");
-        	System.out.println("2. Habilidade especial");
-        	int tipo_ataque2 = scanner.nextInt();
-        	scanner.nextLine(); // Consumindo linha
-        	
-        	switch (tipo_ataque) {
-        	case 1:
-        		personagem2.atacar(personagem1);
-        		if(personagem1.getPontosVida() > 0) {
-        			System.out.println(personagem1.getNome() + " está com " + personagem1.getPontosVida() + " pontos de vida!");
-        		}
-        		break;
-        	case 2:
-        		personagem2.usarHabilidade(personagem1);
-        		if(personagem1.getPontosVida() > 0) {
-        			System.out.println(personagem1.getNome() + " está com " + personagem1.getPontosVida() + " pontos de vida!");
-        		}
-        		break;
-        	default:
-        		System.out.println("Ataque inválido");
-        		return;
-        	}
-        	
+            System.out.println("1. Ataque normal");
+            System.out.println("2. Habilidade especial");
+            int tipo_ataque2 = scanner.nextInt();
+            scanner.nextLine(); // Consumindo linha
+
+            try {
+                switch (tipo_ataque2) {
+                    case 1:
+                        personagem2.atacar(personagem1);
+                        if(personagem1.getPontosVida() > 0) {
+                            System.out.println(personagem1.getNome() + " está com " + personagem1.getPontosVida() + " pontos de vida!");
+                        }
+                        break;
+                    case 2:
+                        personagem2.usarHabilidade(personagem1);
+                        if(personagem1.getPontosVida() > 0) {
+                            System.out.println(personagem1.getNome() + " está com " + personagem1.getPontosVida() + " pontos de vida!");
+                        }
+                        break;
+                    default:
+                        System.out.println("Ataque inválido");
+                        return;
+                }
+            } catch (Exception e) {
+                System.out.println("Erro: " + e.getMessage());
+                return;
+            }
+
             if (personagem1.getPontosVida() <= 0) {
-            	System.out.println(personagem1.getNome() + " morreu!");
+                System.out.println(personagem1.getNome() + " morreu!");
                 System.out.println(personagem2.getNome() + " venceu!");
                 return;
             }
