@@ -15,15 +15,14 @@ public class Arqueiro extends Personagem {
         alvo.setPontosVida(alvo.getPontosVida() - pontosAtaque);
     }
 
-	@Override
-	public void usarHabilidade(Personagem alvo) {
-		// Habilidade especial do Arqueiro
-		if(mana > 35) {
-			System.out.println(nome + " usa sua habilidade especial: Chuva de Flechas!");
-	        alvo.setPontosVida(alvo.getPontosVida() - (pontosAtaque + 50));
-	        mana -= 35;
-		} else {
-			System.out.println("Mana insuficiente!");
-		}
-	}
+    @Override
+    public void usarHabilidade(Personagem alvo) throws Exception {
+        if (mana > 35) {
+            System.out.println(nome + " usa sua habilidade especial: Chuva de Flechas!");
+            alvo.setPontosVida(alvo.getPontosVida() - (pontosAtaque + 50));
+            mana -= 35;
+        } else {
+            throw new Exception("Mana insuficiente!");
+        }
+    }
 }
