@@ -47,5 +47,9 @@ public abstract class Personagem implements HabilidadeEspecial<Personagem>, Seri
         return inventario;
     }
     
-    public abstract void usarHabilidade(Personagem alvo);
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+    
+    public abstract void usarHabilidade(Personagem alvo) throws Exception;
 }
