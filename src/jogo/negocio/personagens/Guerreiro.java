@@ -16,15 +16,14 @@ public class Guerreiro extends Personagem {
         alvo.setPontosVida(alvo.getPontosVida() - pontosAtaque);
     }
 
-	@Override
-	public void usarHabilidade(Personagem alvo) {
-		// Habilidade especial do Guerreiro
-		if(mana > 20) {
-			System.out.println(nome + " usa sua habilidade especial: Fúria do Guerreiro!");
-	        alvo.setPontosVida(alvo.getPontosVida() - (pontosAtaque + 50));
-	        mana -= 20;
-		} else {
-			System.out.println("Mana insuficiente!");
-		}
-	}
+    @Override
+    public void usarHabilidade(Personagem alvo) throws Exception {
+        if (mana > 20) {
+            System.out.println(nome + " usa sua habilidade especial: Fúria do Guerreiro!");
+            alvo.setPontosVida(alvo.getPontosVida() - (pontosAtaque + 50));
+            mana -= 20;
+        } else {
+            throw new Exception("Mana insuficiente!");
+        }
+    }
 }
