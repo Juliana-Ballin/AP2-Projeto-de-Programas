@@ -1,5 +1,6 @@
 package jogo.persistencia;
 
+import jogo.negocio.personagens.Personagem;
 import jogo.negocio.ListaEquipe;
 import jogo.negocio.Equipe;
 
@@ -11,7 +12,7 @@ public class EquipeDAO implements Persistencia<ListaEquipe, Equipe> {
     @Override
      public void salvar(ListaEquipe equipes) throws Exception {
     	try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(arquivo))) {
-    		System.out.println("Salvando...");
+    		System.out.println("...");
             out.writeObject(equipes);
     	}
     }
@@ -19,15 +20,16 @@ public class EquipeDAO implements Persistencia<ListaEquipe, Equipe> {
     @Override
     public Equipe recuperar(String nome) throws Exception {
         ListaEquipe equipes = listar();
-        for (int i = 0; i < equipes.getEquipes().size(); i++) {
+        for (Equipe equipe : equipes.getEquipes()) {
             // Primeiro personagem da equipe como identificador
-            if (equipes.getEquipes().get(i).getPersonagens().get(i).getNome().equals(nome)) {
-                return equipes.getEquipes().get(i);
+            for (Personagem personagem : equipe.getPersonagens()) {
+                if (personagem.getNome().equalsIgnoreCase(nome)) {
+                    return equipe;
+                }
             }
         }
         return null;
     }
-
     @Override
     public ListaEquipe listar() throws Exception {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(arquivo))) {
