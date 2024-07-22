@@ -10,9 +10,7 @@ public class PersonagemDAO implements Persistencia<ListaPersonagens, Personagem>
     @Override
     public void salvar(ListaPersonagens personagens) throws Exception {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(arquivo))) {
-        	System.out.println("Salvando...");
             out.writeObject(personagens);
-            System.out.println("Salvo");
         }
     }
 
@@ -27,11 +25,9 @@ public class PersonagemDAO implements Persistencia<ListaPersonagens, Personagem>
         return null;
     }
 
-	@Override
+    @Override
     public ListaPersonagens listar() throws Exception {
-    	System.out.println("listando");
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(arquivo))) {
-        	System.out.println("Retornando valor");
             return (ListaPersonagens) in.readObject();
         } catch (FileNotFoundException e) {
             return new ListaPersonagens();
